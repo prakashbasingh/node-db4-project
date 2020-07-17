@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 
-// const Recipes = require("./recipesModel.js")
+const Recipes = require("./recipesModel.js")
 
 router.get("/", (req, res) => {
     Recipes.getRecipes()
