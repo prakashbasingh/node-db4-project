@@ -5,11 +5,13 @@ exports.up = function(knex) {
         tbl.increments()
         tbl.string("RecipeName", 200)
          .notNullable()
+        tbl.string("instruction", 500)
+        .notNullable()
   })
 
   .createTable("ingredients", tbl => {
         tbl.increments()
-        tbl.string("ingredientsName", 200)
+        tbl.string("ingredientName", 200)
             .notNullable()
 
   })
@@ -37,6 +39,6 @@ exports.up = function(knex) {
 exports.down = function(knex) {
   return knex.schema
     .dropTableIfExists("recipe_ingredient")
-    dropTableIfExists("ingredients")
-    dropTableIfExists("recipes")
+    .dropTableIfExists("ingredients")
+    .dropTableIfExists("recipes")
 };
